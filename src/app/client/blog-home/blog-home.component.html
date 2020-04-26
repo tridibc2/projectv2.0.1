@@ -1,0 +1,32 @@
+<div class="row" style="background-image: url('assets/images/antoine-barres.jpg');">
+  <div class="col-md-12 mx-auto" style="text-align:center; font-size:3rem; margin-top: 5%; margin-bottom: 5%;"><span style="color: #fff; font-weight: bolder;">All Blogs</span></div>
+  </div>
+<div class="container">
+<div class="row">
+    <div class="col-12 col-md-9 order-1 order-md-1">
+    <div class="row" *ngIf="allBlogs.length>0">
+    <div class="col-md-12 card" *ngFor="let blog of allBlogs">
+        <div class="row">
+            <div class="col-md-4 p-0">
+                <a [routerLink]="['/blog', blog.blogId]">
+                  <img src="http://localhost:4000/{{blog.imagePath}}" class="card-img-top card-img-size" alt="blog1">
+                </a>
+            </div>
+            <div class="col-md-8 px-3">
+                <div class="card-block px-3">
+                    <h4 class="card-title">{{blog.title}}</h4>
+                    <p class="card-text">{{blog.description}}</p>
+                    <br>
+                    <a [routerLink]="['/blog', blog.blogId]" class="mt-auto btn btn-primary">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+    <div class="col-12 col-md-3 order-2 order-md-2" style="margin-top: 1.1%;">
+        <app-recent-blog></app-recent-blog>
+        <app-blog-category></app-blog-category>
+    </div>
+</div>
+</div>
